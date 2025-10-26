@@ -1,15 +1,13 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * print_sign - Compare the variable N
- * @n: If is mayor than 0 show return 1 else 0
+ * print_sign - prints the sign of a number
+ * @n: number to check
  *
- * Return: Always 0.
+ * Return: 1 if positive, 0 if zero, -1 if negative
  */
-
 int print_sign(int n)
 {
-
 	if (n > 0)
 	{
 		_putchar('+');
