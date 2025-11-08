@@ -1,40 +1,41 @@
-#include "holberton.h"
-#define NULL 0
-
+#include "holberton.h" 
 /**
- * _strstr - locate and return pointer to first occurence of substring
- * @haystack: string to search
- * @needle: target substring to search for
- * Return: pointer to index of string at first occurence of whole substring
+ * _strncmp - compares two strings within b bytes.
+ * @s1: string to check
+ * @s2: string to check from
+ * @b: number of bytes to check
+ * Return: 0 if strings are the same
+ * any other number if they are different.
  */
-
+int _strncmp(char *s1, char *s2, unsigned int b)
+{
+	unsigned int i;
+	for (i = 0; i <= b && *s1 == *s2 && *s1 != '\0' && *s2 != '\0'; i++)
+	{
+		s1++;
+		s2++;
+	}
+	return (i - b);
+}
+/**
+ * _strstr - locates a substring
+ * @haystack: string to look though
+ * @needle: substring to find
+ * Return: pointer to string with result of search
+ */
 char *_strstr(char *haystack, char *needle)
 {
-	int i = 0, j, x;
-
-	if (needle[0] == '\0')
-		return (haystack);
-
-	while (haystack[i] != '\0') /* iterate through haystack */
+	unsigned int len;
+	/*Get length of needle for strncmp*/
+	len = 0;
+	while (needle[len] != '\0')
+		len++;
+	/*compare substring*/
+	while (*haystack != '\0')
 	{
-		/* if a byte matches first char of needle */
-		/* interate through needle until match ends */
-		if (haystack[i] == needle[0])
-		{
-			x = i, j = 0;
-			while (needle[j] != '\0')
-			{
-				if (haystack[x] == needle[j])
-					x++, j++;
-				else
-					break;
-			} /* if matched throughout, return haystack */
-			if (needle[j] == '\0')
-			{
-				return (haystack + i);
-			}
-		}
-		i++;
+		if (_strncmp(haystack, needle, len) == 0)
+			return (haystack);
+		haystack++;
 	}
-	return (NULL); /* No match */
+	return (NULL);
 }
