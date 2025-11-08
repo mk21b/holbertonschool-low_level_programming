@@ -8,87 +8,83 @@
 
 int _putchar(char c);
 
-
 /**
- * reset_to_98 - takes a pointer to an int as parameter and updates the value it points to to 98
- * @n: pointer to int n
+ * _memset - fill n bytes of memory with a constant value
+ * @s: pointer to memory area
+ * @b: constant value
+ * @n: number of bytes to fill
+ * Return: memory area
  */
 
-void reset_to_98(int *n);
+char *_memset(char *s, char b, unsigned int n);
 
 /**
- * swap_int - swaps the values of two integers
- * @a: integer to swap
- * @b: integer to swap
+ * _memcpy - copy n bytes of memory from source to destination
+ * @dest: destination
+ * @src: source
+ * @n: number of bytes
+ * Return: pointer to dest
  */
 
-void swap_int(int *a, int *b);
+char *_memcpy(char *dest, char *src, unsigned int n);
 
 /**
- * main - returns the length of a string
- * @s: string
+ * _strchr - locate 1st occurrence of character in string and returns pointer there
+ * @s: string to search
+ * @c: target characer
+ * Return: pointer to that character in string
  */
 
-int _strlen(char *s);
+char *_strchr(char *s, char c);
 
 /**
- * _puts - prints a string, followed by a new line, to stdout
- * @str: string to print
+ * _strspn - return length of string that matches values consistently
+ * @s: string to search
+ * @accept: target matches
+ * Return: number of bytes consecutively matched
  */
 
-void _puts(char *str);
+unsigned int _strspn(char *s, char *accept);
 
 /**
- * print_rev - prints a string, in reverse, followed by a new line
- * @s: string to reverse
+ * _strpbrk - return pointer to byte in s that matches a byte in accepted target
+ * @s: string to search
+ * @accept: target matches
+ * Return: pointer to index of string at first occurence
  */
 
-void print_rev(char *s);
+char *_strpbrk(char *s, char *accept);
 
 /**
- * print_rev - reverses a string
- * @s: string to reverse
+ * _strstr - locate and return pointer to first occurence of substring
+ * @haystack: string to search
+ * @needle: target substring to search for
+ * Return: pointer to index of string at first occurence of whole substring
  */
 
-void rev_string(char *s);
+char *_strstr(char *haystack, char *needle);
 
 /**
- * puts2 - prints every second character of a string, followed by a new line
- * @str: string to print
+ * print_chessboard - print chessboard given set 2D array
+ * @a: 2D array
  */
 
-void puts2(char *str);
+void print_chessboard(char (*a)[8]);
 
 /**
- * puts_half - prints half of a string, followed by a new line
- * @str: string to print
+ * print_diagsums - print sums of diagonals in matrix
+ * @a: matrix
+ * @size: size of matrix
  */
 
-void puts_half(char *str);
+void print_diagsums(int *a, int size);
 
 /**
- * print_array - prints n elements of an array of integers, followed by a new line
- * @a: array
- * @n: number of elements
+ * set_string - set value of pointer to a char
+ * @s: variable of type pointer
+ * @to: char
  */
 
-void print_array(int *a, int n);
-
-/**
- * _strcpy - copies the string pointed to by src, including the terminating null byte (\0),
- * to the buffer pointed to by dest
- * @dest: copy source to this buffer
- * @src: this is the source to copy
- */
-
-char *_strcpy(char *dest, char *src);
-
-/**
- * _atoi - convert string to int
- * @s: string to convert
- * Return: integer
- */
-
-int _atoi(char *s);
+void set_string(char **s, char *to);
 
 #endif

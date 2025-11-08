@@ -8,11 +8,13 @@
  */
 int main(void)
 {
-	char *s0 = "Anne Cognet";
-	char *s1 = "Asaia Palacios";
+	int a;
+	int b;
 
-	printf("%s, %s\n", s0, s1);
-	set_string(&s1, s0);
-	printf("%s, %s\n", s0, s1);
+	a = 98;
+	b = 42;
+	printf("a=%d, b=%d\n", a, b);
+	swap_int(&a, &b);
+	printf("a=%d, b=%d\n", a, b);
 	return (0);
 }

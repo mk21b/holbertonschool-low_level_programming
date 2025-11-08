@@ -8,11 +8,11 @@
  */
 int main(void)
 {
-	char *s0 = "Anne Cognet";
-	char *s1 = "Asaia Palacios";
+	char s1[98];
+	char *p;
 
-	printf("%s, %s\n", s0, s1);
-	set_string(&s1, s0);
-	printf("%s, %s\n", s0, s1);
+	p = _strcpy(s1, "First, solve the problem. Then, write the code\n");
+	printf("%s", s1);
+	printf("%s", p);
 	return (0);
 }
