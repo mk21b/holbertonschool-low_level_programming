@@ -1,14 +1,14 @@
-#include <main.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
-
+#include "main.h"
 /**
  * checker - checks if all arguments are positive numbers
- * @argc: argument count
- * @argv: argument vector
- * Return: 0 if valid, 1 if any invalid
+ * @argc: number of arguments passed to the program
+ * @argv: array of arguments
+ *
+ * Return: 0 if all arguments are valid numbers, 1 if any argument is invalid
  */
 int checker(int argc, char *argv[])
 {
@@ -26,9 +26,10 @@ int checker(int argc, char *argv[])
 
 /**
  * main - adds all positive numbers passed as arguments
- * @argc: argument count
- * @argv: argument vector
- * Return: 0 on success, 1 on error
+ * @argc: number of arguments passed to the program
+ * @argv: array of arguments
+ *
+ * Return: 0 on success, 1 if any argument contains a non-digit
  */
 int main(int argc, char *argv[])
 {
