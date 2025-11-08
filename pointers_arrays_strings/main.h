@@ -14,3 +14,4 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 #endif
 
 char *_strchr(char *s, char c);
+

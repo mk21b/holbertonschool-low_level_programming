@@ -5,22 +5,22 @@
  * @s: the string to search
  * @c: the character to locate
  *
- * Return: pointer to the first occurrence of c in s,
- * or NULL if the character is not found
+ * Return: pointer to first occurrence of c in s, or 0 if not found
  */
 char *_strchr(char *s, char c)
 {
-    int i;
+    int i = 0;
 
-    for (i = 0; s[i] != '\0'; i++)
+    while (s[i] != '\0')
     {
         if (s[i] == c)
             return (&s[i]);
+        i++;
     }
 
-    /* Check if the character is the null terminator */
+    /* if we're looking for the null terminator, return its address */
     if (c == '\0')
         return (&s[i]);
 
-    return (0);
+    return (0); /* character not found */
 }
