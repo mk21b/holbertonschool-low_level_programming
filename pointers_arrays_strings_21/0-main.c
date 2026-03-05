@@ -8,11 +8,11 @@
  */
 int main(void)
 {
-	char s[] = "Holberton School!\n";
-	char *p;
+	int n;
 
-	p = string_toupper(s);
-	printf("%s", p);
-	printf("%s", s);
+	n = 402;
+	printf("n=%d\n", n);
+	reset_to_98(&n);
+	printf("n=%d\n", n);
 	return (0);
 }
