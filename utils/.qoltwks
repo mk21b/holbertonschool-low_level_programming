@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Check .bashrc exists in current directory
+if [ ! -f .bashrc ]; then
+    echo ".bashrc not found in current directory."
+    exit 1
+fi
+
+# Copy .bashrc to user home
+cp .bashrc ~/.bashrc
+
+# Source new .bashrc
+source ~/.bashrc
+
+echo ".bashrc updated and sourced"
